@@ -7,7 +7,67 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 3 text boxes with one check box
+nmae adddress door number check box
+after selecting the checkbox all the value should autofill in the other 3 boxes -->
     
+    <div>
+        <label for="">Name</label><br>
+        <input type="text" id="name1">
+    </div><br>
+    <div>
+        <label for="">Address</label><br>
+        <input type="text" id="address1">
+    </div><br>
+    <div>
+        <label for="">Door number</label><br>
+        <input type="text" id="door1">
+    </div><br>
+    <!-- autofill -->
+    <div>
+        <label for="">Copy Data</label>
+        <input type="checkbox" id="checkbox">
+    </div>
+     <br>
+    <div>
+        <label for="">Name</label><br>
+        <input type="text" id="name2">
+    </div><br>
+    <div>
+        <label for="">Address</label><br>
+        <input type="text" id="address2">
+    </div><br>
+    <div>
+        <label for="">Door number</label><br>
+        <input type="text" id="door2">
+    </div>
+      
     
 </body>
+<script>
+  var getData = document.getElementById("checkbox");
+  getData.addEventListener("change", copyData)
+
+  function copyData(){
+    console.log(getData.checked)
+    if(getData.checked){
+        var name1 = document.getElementById("name1").value;
+        var address1 = document.getElementById("address1").value;
+        var door1 = document.getElementById("door1").value;
+
+        document.getElementById("name2").value = name1
+        document.getElementById("address2").value = address1;
+        document.getElementById("door2").value = door1;
+
+    } else {
+        document.getElementById("name2").value = ""
+        document.getElementById("address2").value = "";
+        document.getElementById("door2").value = "";
+    }
+
+  }
+
+  
+
+</script>
 </html>
