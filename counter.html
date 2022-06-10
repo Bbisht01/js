@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>COUNTS</p>
+    <div id="counter">
+        <!-- counts -->
+    </div>
+</body>
+<script>
+    let counts=setInterval(updated,1000);
+    let increment=0;
+    function updated(){
+        var count= document.getElementById("counter");
+        count.innerHTML = ++increment;
+        count.style.color = "red";
+        // count.style.width = "5%";
+        // count.style.height = "40px";
+        // count.style.borderRadius = "50%";
+
+        if(increment == 100)
+        {
+            clearInterval(counts);
+        }
+    }
+</script>
+</html>
