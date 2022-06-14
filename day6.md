@@ -44,22 +44,30 @@ ReactDOM.render(element(displayData), document.getElementById("root"));
 
 
 2.react.createElement-input enter value and print
-
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const element = React.createElement;
 
+const handleInput = (e) => {
+  console.log('e:', e.target.value);
+};
+
 const displayData = () =>
   element(
-    "div",
+    'div',
     null,
-    element("h1", { className: "Header" }, "form"),
-    element("p", null, "Enter the value:"),
-    element("input", { placeholder: "Enter a text", type: "text" })
+    element('h1', { className: 'Header' }, 'form'),
+    element('p', null, 'Enter the value:'),
+    element('input', {
+      type: 'text',
+      placeholder: 'Enter value',
+      onChange: handleInput,
+    })
   );
 
-ReactDOM.render(element(displayData), document.getElementById("root"));
+ReactDOM.render(element(displayData), document.getElementById('root'));
+
 
 
 
